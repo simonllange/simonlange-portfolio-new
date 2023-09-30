@@ -16,8 +16,8 @@ const MainButton: React.FC<MainButtonProps> = ({ label, href, external = false, 
   const buttonContent = (
     <motion.button
       className={combinedClass}
-      whileHover={{ scale: 1.08 }}
-      whileTap={{ scale: 0.9 }}
+      whileHover={{ scale: 1.04 }}
+      whileTap={{ scale: 1.04 }}
       transition={{ type: "spring", stiffness: 400, damping: 10 }}
       onClick={onClick}>
       {label}
@@ -30,8 +30,8 @@ const MainButton: React.FC<MainButtonProps> = ({ label, href, external = false, 
         <motion.a
           href={href}
           className={combinedClass}
-          whileHover={{ scale: 1.08 }}
-          whileTap={{ scale: 0.9 }}
+          whileHover={{ scale: 1.04 }}
+          whileTap={{ scale: 1.04 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}>
           {label}
         </motion.a>

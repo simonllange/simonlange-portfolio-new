@@ -5,6 +5,15 @@ module.exports = {
   ],
   darkMode: 'class', // or 'media' or 'false'
   theme: {
+    container: {
+      padding: {
+        DEFAULT: '1rem',
+        sm: '2rem',
+        lg: '4rem',
+        xl: '5rem',
+        '2xl': '6rem',
+      },
+    },
     extend: {
       animation: {
         opacityIn: 'opacityIn .5s ease-in-out forwards'
@@ -19,25 +28,9 @@ module.exports = {
           },
         },
       },
-      colors: {
-        light: {
-          primary: '#57a773', // Example color code for light mode primary color
-          secondary: '#fe7f2d', // Example color code for light mode secondary color
-          background: '#ebebeb', // Example color code for light mode background color
-          text: '#333' // Example color code for light mode text color
-        },
-        dark: {
-          primary: '#57a773', // Example color code for dark mode primary color
-          secondary: '#fe7f2d', // Example color code for dark mode secondary color
-          background: '#32373b', // Example color code for dark mode background color
-          text: '#fff' // Example color code for dark mode text color
-        },
-        primary: '#57a773',
-        secondary: '#fe7f2d',
-      },
       fontFamily: {
-        sans: ['DM Sans', 'sans-serif'],
-        serif: ['DM Serif Display', 'serif'],
+        sans: ['Inter', 'sans-serif'],
+        serif: ['Merriweather', 'serif'],
         mono: ['Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
       },
       // Add other theme extensions here as needed

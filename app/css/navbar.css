@@ -1,40 +1,7 @@
 .mobile-links {
-  @apply overflow-hidden font-serif font-light text-light-text  text-right first:border-t first:md:border-t-0 md:border-0 w-full dark:text-dark-text transition duration-150  hover:text-primary text-4xl md:text-base dark:hover:text-primary block md:hidden py-5 pr-10;
+  @apply overflow-hidden font-serif font-semibold text-slate-200  text-right  w-full  transition duration-150  hover:text-teal-300 text-4xl md:text-base block md:hidden py-5 pr-10;
 }
 
 .desktop-links {
-  @apply font-sans hidden md:block transition duration-150 hover:text-primary font-medium relative after:absolute after:content-[''] after:h-[2px] after:w-full after:bg-primary after:transition after:duration-300 hover:after:scale-x-100 after:scale-x-0 after:bottom-[-5px] after:left-0;
-}
-
-.custom-btn {
-  @apply justify-center items-center shadow-md relative overflow-hidden bg-primary text-white dark:text-white font-bold px-4 py-2 rounded-md md:ml-4 flex;
-}
-
-.custom-btn::before {
-  content: "";
-  position: absolute;
-  margin: auto;
-  width: 0%;
-  height: 0%;
-  background: #fff;
-  transition: 0.5s ease-out;
-  border-radius: 100% 100% 100% 100%;
-  opacity: 0%;
-}
-
-.custom-btn:hover:before {
-  width: 500px;
-  height: 500px;
-  transition: 0.5s ease-out;
-  border-radius: 0;
-  animation: opacity-in 0.7s forwards ease-out;
-}
-
-@keyframes opacity-in {
-  from {
-    opacity: 30%;
-  }
-  to {
-    opacity: 0%;
-  }
+  @apply font-sans hidden md:block transition duration-150 text-slate-200 hover:text-teal-300 font-medium relative after:absolute after:content-[''] after:h-[2px] after:w-full after:bg-teal-300 after:transition after:duration-300 hover:after:scale-x-100 after:scale-x-0 after:bottom-[-5px] after:left-0;
 }

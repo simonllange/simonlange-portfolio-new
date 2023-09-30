@@ -1,5 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import { Navbar } from "@/components";
 
 export const metadata: Metadata = {
   title: "Simon Lange - Front-end Developer from Kolding, Denmark.",
@@ -10,7 +11,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="bg-light-background text-light-text dark:text-dark-text dark:bg-dark-background overflow-hidden">{children}</body>
+      <body className="antialiased bg-slate-900 overflow-hidden container mx-auto">
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
