@@ -25,6 +25,11 @@ const Navbar = () => {
     closed: {},
   };
 
+  const linkVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.5 } },
+  };
+
   const itemVariants = {
     open: {
       x: 0,
@@ -50,18 +55,20 @@ const Navbar = () => {
     <header className=" bg-transparent py-4">
       <div className="flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className="text-slate-200 tracking-tighter font-serif text-3xl">
-          simon.
-        </Link>
+        <motion.div variants={linkVariants} initial="hidden" animate="visible">
+          <Link href="/" className="text-slate-200 tracking-tighter font-serif text-3xl">
+            simon.
+          </Link>
+        </motion.div>
 
         {/* Burger Menu (visible on small screens) */}
-        <div className="md:hidden text-slate-200">
+        <motion.div variants={linkVariants} initial="hidden" animate="visible" className="md:hidden text-slate-200">
           <button className="group  flex flex-col gap-[5px] items-end" onClick={() => setIsOpen(!isOpen)}>
             <span className="w-5 bg-slate-200 h-px block"></span>
             <span className="w-5 bg-slate-200 h-px block"></span>
             <span className="group-hover:w-5 transition-all duration-300 w-2.5 bg-slate-200 h-px block"></span>
           </button>
-        </div>
+        </motion.div>
 
         {/* Navigation Links */}
         <motion.ul
@@ -75,12 +82,16 @@ const Navbar = () => {
             <React.Fragment key={link.label}>
               <li key={link.label + "-desktop"} className="hidden md:block">
                 {link.isInternal ? (
-                  <Link className="desktop-links" href={link.href}>
-                    {link.label}
+                  <Link href={link.href} className="desktop-links">
+                    <motion.span variants={linkVariants} initial="hidden" animate="visible">
+                      {link.label}
+                    </motion.span>
                   </Link>
                 ) : (
                   <a href={link.href} target="_blank" rel="noopener noreferrer" className="desktop-links">
-                    {link.label}
+                    <motion.span variants={linkVariants} initial="hidden" animate="visible">
+                      {link.label}
+                    </motion.span>
                   </a>
                 )}
               </li>
@@ -99,8 +110,9 @@ const Navbar = () => {
           ))}
 
           {/* Resume Button */}
-
-          <MainButton label="Resume" href="/resume" className="!absolute md:!relative bottom-10 right-10 md:bottom-auto md:right-auto" />
+          <motion.div variants={linkVariants} initial="hidden" animate="visible">
+            <MainButton label="Resume" href="/resume" className="!absolute md:!relative bottom-10 right-10 md:bottom-auto md:right-auto" />
+          </motion.div>
 
           {/* Mobile Menu Close Button */}
           <div className="md:hidden absolute top-10 right-9 text-slate-200">

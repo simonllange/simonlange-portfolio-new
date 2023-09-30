@@ -1,0 +1,22 @@
+.arrow-svg {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.draw-arrow {
+  stroke-width: 5;
+  stroke: rgb(226 232 240);
+  fill: none;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-name: draw;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

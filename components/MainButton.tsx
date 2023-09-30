@@ -3,14 +3,15 @@ import Link from "next/link";
 import React from "react";
 
 interface MainButtonProps {
-  label: string;
+  label?: string;
   href?: string;
   external?: boolean;
   onClick?: () => void;
   className?: string;
+  children?: React.ReactNode;
 }
 
-const MainButton: React.FC<MainButtonProps> = ({ label, href, external = false, onClick, className = "" }) => {
+const MainButton: React.FC<MainButtonProps> = ({ label, href, external = false, onClick, className = "", children }) => {
   const baseClass = "custom-btn";
   const combinedClass = `${baseClass} ${className}`;
   const buttonContent = (
@@ -20,7 +21,7 @@ const MainButton: React.FC<MainButtonProps> = ({ label, href, external = false, 
       whileTap={{ scale: 1.04 }}
       transition={{ type: "spring", stiffness: 400, damping: 10 }}
       onClick={onClick}>
-      {label}
+      {label || children}
     </motion.button>
   );
 
@@ -33,7 +34,7 @@ const MainButton: React.FC<MainButtonProps> = ({ label, href, external = false, 
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 1.04 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}>
-          {label}
+          {label || children}
         </motion.a>
       );
     } else {

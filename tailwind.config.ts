@@ -15,6 +15,9 @@ module.exports = {
       },
     },
     extend: {
+      transitionDelay: {
+        '75': '75ms',
+      },
       animation: {
         opacityIn: 'opacityIn .5s ease-in-out forwards'
       },
@@ -32,6 +35,7 @@ module.exports = {
         sans: ['Inter', 'sans-serif'],
         serif: ['Merriweather', 'serif'],
         mono: ['Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
+        cursive: ['Courgette', 'cursive']
       },
       // Add other theme extensions here as needed
     },
