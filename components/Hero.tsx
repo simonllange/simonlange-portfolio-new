@@ -295,9 +295,9 @@ const Hero: React.FC = () => {
                 <div className="flex justify-between items-center border-b p-4">
                   <p className="text-slate-900 font-semibold flex items-center ">
                     Notifications
-                    <div className="bg-red-500 w-6 h-6 rounded-md ml-3 flex items-center justify-center">
+                    <span className="bg-red-500 w-6 h-6 rounded-md ml-3 flex items-center justify-center">
                       <FontAwesomeIcon className="text-white text-sm" icon={faBell} />
-                    </div>
+                    </span>
                   </p>
                   <div className="flex items-center gap-4 relative">
                     <AnimatePresence>
